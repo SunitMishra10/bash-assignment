@@ -109,6 +109,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Use `find /var/log -name "*.log" -mtime +7` to identify older logs.  
 - `tar -czf old_logs_YYYYMMDD.tar.gz [log_files]` to compress.  
 - Verify your commands in a test environment before removing any critical logs.
+- sudo touch -d "10 days ago" /var/log/dummy_old.log (This can be used to make logs have a older date)
 </details>
 
 ---
