@@ -19,7 +19,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Use `EUID` or `id -u` to check privileges.  
 - For a non-root scenario, `exit 1` is a good choice.
 </details>
-Solution
+### Solution
 <image src = "images-bash-assignment/check_root.png">
 ---
 
@@ -37,6 +37,8 @@ Solution
 3. Display the final permissions using `ls -ld`.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `if [ -d "$1" ]` checks if a directory already exists.  
@@ -61,6 +63,8 @@ Solution
    - Otherwise, print `"Invalid option"` and decide whether to exit or prompt again.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - Use the built-in `read` command to capture user input.  
@@ -82,6 +86,8 @@ Solution
 4. Otherwise, print `"System resources are normal."`
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - Commands like `top -bn1 | grep "Cpu(s)"` or `vmstat` can help parse CPU usage.  
@@ -130,6 +136,8 @@ Solution
    - If it returns failure, print `"You must run this as root!"` and exit.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - Within the function, use `return 1` or `return 0`.  
@@ -152,6 +160,8 @@ Solution
    - Exit gracefully with a status code.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `trap "echo 'Caught SIGINT! Cleaning up...'; rm -f /tmp/tempfile; exit 1" SIGINT`  
@@ -177,6 +187,8 @@ Solution
 4. Loop until the user chooses **Exit**.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - The `select` command automatically displays a menu of items and assigns the user's choice to `$REPLY`.  
@@ -197,6 +209,8 @@ Solution
 3. If the file does not exist, display an error and exit.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `while IFS= read -r line; do ... done < "$filename"`  
@@ -219,6 +233,8 @@ Solution
    - Print a success or error message.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `IFS=',' read -r username password group <<< "$line"` to split CSV fields.  
@@ -241,6 +257,8 @@ Solution
 3. Verify the cron job has been successfully scheduled.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `crontab -l > my_cron_backup` to export current crontab.  
@@ -264,6 +282,8 @@ Solution
 3. (Optional) If the script is run with `--bash-only`, only display users whose shell is `/bin/bash`.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `awk -F: '{print $1, $7}' /etc/passwd` is a good start.  
@@ -284,6 +304,8 @@ Solution
 3. Otherwise, print `"Disk usage is normal."`
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `df -h / | tail -1 | awk '{print $5}'` extracts the usage percentage.  
@@ -305,6 +327,8 @@ Solution
 4. If it’s active, print `"Service [service_name] is running."`
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `systemctl is-active $1` returns `active` if the service is running.  
@@ -328,6 +352,8 @@ Solution
 3. Once valid, append the details to `users_info.csv` in the format: `name,age,email`.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - A basic email regex:  
@@ -350,6 +376,8 @@ Solution
 4. Print a summary: `"Differences found: X lines."`
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `diff -qr dirA dirB` to compare directories recursively.  
@@ -370,6 +398,8 @@ Solution
 3. Outputs the result to `sorted_unique.txt`.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `sort -f filename | uniq` or `sort -uf filename` are typical approaches.  
@@ -390,6 +420,8 @@ Solution
 3. If `--special` is included, add special characters (`!@#$%`) to the character set.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `head -c <length>` controls the number of bytes read from `/dev/urandom`.  
@@ -412,6 +444,8 @@ Solution
 5. If unsuccessful, print in **red** text: `"Backup Failed!"` and exit with code `1`.
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - For green text: `echo -e "\e[32mBackup Successful!\e[0m"`.  
@@ -433,6 +467,8 @@ Solution
 3. Print a final message: `"Monitoring complete. Check monitor.log."`
 
 <details>
+### Solution
+<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - Prepend a timestamp to the log file:  
