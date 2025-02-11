@@ -17,7 +17,8 @@ Perform the following tasks on your HEC2 instance (or your local lab environment
   ```bash
   ping -c 5 google.com
   ```
-
+Solution
+<image src = "images-linux-assignment/1.png">
 ---
 
 ### 2. Tracing the Route with `traceroute`/`tracert`
@@ -29,7 +30,8 @@ Perform the following tasks on your HEC2 instance (or your local lab environment
   ```bash
   traceroute google.com  # On Linux/macOS
   ```
-
+Solution
+<image src = "images-linux-assignment/2.png">
 ---
 
 ### 3. Monitoring Open Ports with `netstat`
@@ -41,7 +43,8 @@ Perform the following tasks on your HEC2 instance (or your local lab environment
   ```bash
   netstat -tulnp
   ```
-
+Solution
+<image src = "images-linux-assignment/3.png">
 ---
 
 ### 4. Fetching HTTP Headers with `curl`
@@ -53,7 +56,8 @@ Perform the following tasks on your HEC2 instance (or your local lab environment
   ```bash
   curl -I https://www.google.com
   ```
-
+Solution
+<image src = "images-linux-assignment/4.png">
 ---
 
 ### 5. Domain Name Resolution with `dig`/`nslookup`
@@ -67,7 +71,8 @@ Perform the following tasks on your HEC2 instance (or your local lab environment
   # or
   nslookup example.com
   ```
-
+Solution
+<image src = "images-linux-assignment/5.png">
 ---
 
 ## Part B: Theory Questions
