@@ -19,7 +19,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Use `EUID` or `id -u` to check privileges.  
 - For a non-root scenario, `exit 1` is a good choice.
 </details>
-### Solution
+#### Solution
 <image src = "images-bash-assignment/check_root.png">
 ---
 
