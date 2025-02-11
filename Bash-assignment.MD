@@ -263,7 +263,8 @@ Solution
 - `crontab my_cron_backup` to reload the updated crontab.
 </details>
 Solution
-<image src = "images-bash-assignment/schedule_backup.png">
+<image src = "images-bash-assignment/schedule_backups1.png">
+<image src = "images-bash-assignment/schedule_backups2.png">
 ---
 
 ## 12. Parsing `/etc/passwd` with `awk` and `grep`
