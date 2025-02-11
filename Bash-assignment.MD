@@ -19,7 +19,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Use `EUID` or `id -u` to check privileges.  
 - For a non-root scenario, `exit 1` is a good choice.
 </details>
-#### Solution
+Solution
 <image src = "images-bash-assignment/check_root.png">
 ---
 
@@ -44,7 +44,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `mkdir -p` can help if you want to recursively create parent directories.  
 - Use `chmod 755` to apply permissions.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/make_dir.png">
 ---
 
@@ -69,7 +69,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Use the built-in `read` command to capture user input.  
 - A `case` statement can be wrapped in a loop if you want multiple attempts before quitting.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/case_example.png">
 ---
 
@@ -92,7 +92,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - For memory, use `free -m` or `/proc/meminfo`.  
 - `awk`, `sed`, and `cut` are your friends for extracting numeric values.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/resource_monitor.png">
 ---
 
@@ -140,7 +140,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Within the function, use `return 1` or `return 0`.  
 - After calling `is_root`, check its exit status with `if is_root; then ... else ... fi`.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/validate_root.png">
 ---
 
@@ -164,7 +164,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `trap "echo 'Caught SIGINT! Cleaning up...'; rm -f /tmp/tempfile; exit 1" SIGINT`  
 - Test by running the script and pressing `CTRL+C`.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/signal_trap.png">
 ---
 
@@ -191,7 +191,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - The `select` command automatically displays a menu of items and assigns the user's choice to `$REPLY`.  
 - You can wrap this in a `while true` loop to keep repeating until "Exit" is selected.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/menu_select.png">
 ---
 
@@ -213,7 +213,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `while IFS= read -r line; do ... done < "$filename"`  
 - Keep a counter that increments for every line.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/read_file.png">
 ---
 
@@ -239,7 +239,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 </details>
 
 **Sample CSV Provided**: [See below for `sample_users.csv`](#sample-userscsv).
-### Solution
+Solution
 <image src = "images-bash-assignment/create_users.png">
 ---
 
@@ -262,7 +262,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - Add `0 0 * * * /path/to/backup_script.sh` to that file.  
 - `crontab my_cron_backup` to reload the updated crontab.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/schedule_backup.png">
 ---
 
@@ -285,7 +285,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `awk -F: '{print $1, $7}' /etc/passwd` is a good start.  
 - For alignment, consider `printf "%-15s %-20s\n" "$user" "$shell"`.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/parse_passwd.png">
 ---
 
@@ -307,7 +307,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `df -h / | tail -1 | awk '{print $5}'` extracts the usage percentage.  
 - Strip the `%` with `sed 's/%//'` or parameter expansion.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/disk_usage_alert.png">
 ---
 
@@ -330,7 +330,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `systemctl is-active $1` returns `active` if the service is running.  
 - Validate the exit codes to determine next steps.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/service_checker.png">
 ---
 
@@ -356,7 +356,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 `[[ "$email" =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$ ]]`
 - Use a `while :` loop with `break` upon valid input.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/user_prompt.png">
 ---
 
@@ -379,7 +379,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `diff -qr dirA dirB` to compare directories recursively.  
 - `grep -c ^` on the output to count lines of differences.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/dir_compare.png">
 ---
 
@@ -401,7 +401,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `sort -f filename | uniq` or `sort -uf filename` are typical approaches.  
 - Make sure you handle case insensitivity properly (`-f`).
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/sort_unique.png">
 ---
 
@@ -423,7 +423,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - `head -c <length>` controls the number of bytes read from `/dev/urandom`.  
 - Pipe to `tr -dc 'A-Za-z0-9'` or an extended set for special characters.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/gen_pass.png">
 ---
 
@@ -448,7 +448,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 - For red text: `echo -e "\e[31mBackup Failed!\e[0m"`.  
 - `[ -s backup_YYYYMMDD-HHMMSS.tar.gz ]` checks file size.
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/backup_dir.png">
 ---
 
@@ -473,5 +473,5 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting monitor" | tee -a monitor.log
 ping -c 4 google.com | tee -a monitor.log
 ```
 </details>
-### Solution
+Solution
 <image src = "images-bash-assignment/run_monitor.png">
