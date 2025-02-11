@@ -239,9 +239,9 @@ Solution
 </details>
 
 **Sample CSV Provided**: [See below for `sample_users.csv`](#sample-userscsv).
+---
 Solution
 <image src = "images-bash-assignment/create_users.png">
----
 
 ## 11. Automate Cron Job Creation
 
