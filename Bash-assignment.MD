@@ -37,15 +37,15 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. Display the final permissions using `ls -ld`.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `if [ -d "$1" ]` checks if a directory already exists.  
 - `mkdir -p` can help if you want to recursively create parent directories.  
 - Use `chmod 755` to apply permissions.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/make_dir.png">
 ---
 
 ## 3. User Input & Case Statements
@@ -63,14 +63,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
    - Otherwise, print `"Invalid option"` and decide whether to exit or prompt again.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - Use the built-in `read` command to capture user input.  
 - A `case` statement can be wrapped in a loop if you want multiple attempts before quitting.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/case_example.png">
 ---
 
 ## 4. System Resource Check (CPU & Memory)
@@ -86,15 +86,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 4. Otherwise, print `"System resources are normal."`
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - Commands like `top -bn1 | grep "Cpu(s)"` or `vmstat` can help parse CPU usage.  
 - For memory, use `free -m` or `/proc/meminfo`.  
 - `awk`, `sed`, and `cut` are your friends for extracting numeric values.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/resource_monitor.png">
 ---
 
 ## 5. Archive Old Log Files
@@ -136,14 +135,13 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
    - If it returns failure, print `"You must run this as root!"` and exit.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - Within the function, use `return 1` or `return 0`.  
 - After calling `is_root`, check its exit status with `if is_root; then ... else ... fi`.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/validate_root.png">
 ---
 
 ## 7. Trap and Signal Handling
@@ -160,14 +158,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
    - Exit gracefully with a status code.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `trap "echo 'Caught SIGINT! Cleaning up...'; rm -f /tmp/tempfile; exit 1" SIGINT`  
 - Test by running the script and pressing `CTRL+C`.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/signal_trap.png">
 ---
 
 ## 8. Menu with `select`
@@ -187,14 +185,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 4. Loop until the user chooses **Exit**.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - The `select` command automatically displays a menu of items and assigns the user's choice to `$REPLY`.  
 - You can wrap this in a `while true` loop to keep repeating until "Exit" is selected.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/menu_select.png">
 ---
 
 ## 9. Reading a File Line by Line
@@ -209,14 +207,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. If the file does not exist, display an error and exit.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `while IFS= read -r line; do ... done < "$filename"`  
 - Keep a counter that increments for every line.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/read_file.png">
 ---
 
 ## 10. Batch User Creation from CSV
@@ -233,8 +231,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
    - Print a success or error message.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `IFS=',' read -r username password group <<< "$line"` to split CSV fields.  
@@ -242,7 +239,8 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 </details>
 
 **Sample CSV Provided**: [See below for `sample_users.csv`](#sample-userscsv).
-
+### Solution
+<image src = "images-bash-assignment/create_users.png">
 ---
 
 ## 11. Automate Cron Job Creation
@@ -257,15 +255,15 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. Verify the cron job has been successfully scheduled.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `crontab -l > my_cron_backup` to export current crontab.  
 - Add `0 0 * * * /path/to/backup_script.sh` to that file.  
 - `crontab my_cron_backup` to reload the updated crontab.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/schedule_backup.png">
 ---
 
 ## 12. Parsing `/etc/passwd` with `awk` and `grep`
@@ -282,14 +280,13 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. (Optional) If the script is run with `--bash-only`, only display users whose shell is `/bin/bash`.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
 <summary>Hints</summary>
 
 - `awk -F: '{print $1, $7}' /etc/passwd` is a good start.  
 - For alignment, consider `printf "%-15s %-20s\n" "$user" "$shell"`.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/parse_passwd.png">
 ---
 
 ## 13. Disk Usage Alert
@@ -304,14 +301,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. Otherwise, print `"Disk usage is normal."`
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `df -h / | tail -1 | awk '{print $5}'` extracts the usage percentage.  
 - Strip the `%` with `sed 's/%//'` or parameter expansion.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/disk_usage_alert.png">
 ---
 
 ## 14. Service Status Checker
@@ -327,14 +324,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 4. If it’s active, print `"Service [service_name] is running."`
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `systemctl is-active $1` returns `active` if the service is running.  
 - Validate the exit codes to determine next steps.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/service_checker.png">
 ---
 
 ## 15. Interactive User Prompt with Validation
@@ -352,15 +349,15 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. Once valid, append the details to `users_info.csv` in the format: `name,age,email`.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - A basic email regex:  
 `[[ "$email" =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$ ]]`
 - Use a `while :` loop with `break` upon valid input.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/user_prompt.png">
 ---
 
 ## 16. Directory Comparison & Logging
@@ -376,14 +373,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 4. Print a summary: `"Differences found: X lines."`
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `diff -qr dirA dirB` to compare directories recursively.  
 - `grep -c ^` on the output to count lines of differences.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/dir_compare.png">
 ---
 
 ## 17. Sort & Remove Duplicates
@@ -398,14 +395,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. Outputs the result to `sorted_unique.txt`.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `sort -f filename | uniq` or `sort -uf filename` are typical approaches.  
 - Make sure you handle case insensitivity properly (`-f`).
 </details>
-
+### Solution
+<image src = "images-bash-assignment/sort_unique.png">
 ---
 
 ## 18. Random Password Generator
@@ -420,14 +417,14 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. If `--special` is included, add special characters (`!@#$%`) to the character set.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - `head -c <length>` controls the number of bytes read from `/dev/urandom`.  
 - Pipe to `tr -dc 'A-Za-z0-9'` or an extended set for special characters.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/gen_pass.png">
 ---
 
 ## 19. Comprehensive Backup Script with Verification
@@ -444,15 +441,15 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 5. If unsuccessful, print in **red** text: `"Backup Failed!"` and exit with code `1`.
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - For green text: `echo -e "\e[32mBackup Successful!\e[0m"`.  
 - For red text: `echo -e "\e[31mBackup Failed!\e[0m"`.  
 - `[ -s backup_YYYYMMDD-HHMMSS.tar.gz ]` checks file size.
 </details>
-
+### Solution
+<image src = "images-bash-assignment/backup_dir.png">
 ---
 
 ## 20. Monitoring and Logging Script Output
@@ -467,8 +464,7 @@ This assignment includes 20 Bash scripting exercises focused on Linux system adm
 3. Print a final message: `"Monitoring complete. Check monitor.log."`
 
 <details>
-### Solution
-<image src = "images-bash-assignment/check_root.png">
+
 <summary>Hints</summary>
 
 - Prepend a timestamp to the log file:  
@@ -477,3 +473,5 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting monitor" | tee -a monitor.log
 ping -c 4 google.com | tee -a monitor.log
 ```
 </details>
+### Solution
+<image src = "images-bash-assignment/run_monitor.png">
